@@ -1,10 +1,14 @@
 var plugins = [{
       name: 'gatsby-plugin-manifest',
-      plugin: require('/Users/hi/Desktop/Ekohack/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
+      plugin: require('/Users/hi/Desktop/Ekohack/node_modules/gatsby-plugin-manifest/gatsby-ssr.js'),
       options: {"plugins":[],"name":"ekohacks","short_name":"ekohacks","start_url":"/","background_color":"#000000","theme_color":"#4ADE80","display":"minimal-ui","icon":"src/images/icon.png","legacy":true,"theme_color_in_head":true,"cache_busting_mode":"query","crossOrigin":"anonymous","include_favicon":true,"cacheDigest":"cdd8a92d006717e902e4755cff5d217b"},
     },{
       name: 'default-site-plugin',
-      plugin: require('/Users/hi/Desktop/Ekohack/gatsby-ssr'),
+      plugin: require('/Users/hi/Desktop/Ekohack/gatsby-ssr.js'),
+      options: {"plugins":[]},
+    },{
+      name: 'partytown',
+      plugin: require('/Users/hi/Desktop/Ekohack/node_modules/gatsby/dist/internal-plugins/partytown/gatsby-ssr.js'),
       options: {"plugins":[]},
     }]
 /* global plugins */
