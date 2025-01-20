@@ -16,9 +16,6 @@ technologies:
   - name: "Tailwind CSS"
     icon: "🌊"
     description: "Utility-First Styling"
-  - name: "view.js"
-    icon: "+"
-    description: "working with view.js"
 approaches:
   - title: "Frontend Excellence"
     features:

@@ -8,6 +8,7 @@ import TechStack from "../components/TechStack";
 import Approach from "../components/Approach";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 const Home = ({ data }) => {
   const values = data?.values?.frontmatter?.values || [];
@@ -18,25 +19,29 @@ const Home = ({ data }) => {
   const approach = data?.approach?.frontmatter?.steps || [];
   const contact = data?.contact?.frontmatter?.contact || {};
   const footer = data?.footer?.frontmatter?.footer || {};
+  const header = data?.header?.frontmatter?.header || {};
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <div className="container mx-auto px-6 py-32">
-        <h1 className="text-6xl font-bold mb-6">EkoHacks</h1>
-        <p className="text-6xl font-bold text-green-400 mb-6">Global Tech, Local Impact</p>
-        <p className="text-xl text-gray-400 mb-8 max-w-2xl">
-          Bridging Europe and Africa through innovative tech solutions. Operating in London, Greece, and Nigeria.
-        </p>
+    <>
+      <Header header={header} />
+      <div className="min-h-screen bg-black text-white">
+        <div className="container mx-auto px-6 py-32">
+          <h1 className="text-6xl font-bold mb-6">EkoHacks</h1>
+          <p className="text-6xl font-bold text-green-400 mb-6">Global Tech, Local Impact</p>
+          <p className="text-xl text-gray-400 mb-8 max-w-2xl">
+            Bridging Europe and Africa through innovative tech solutions. Operating in London, Greece, and Nigeria.
+          </p>
+        </div>
+        <ValuesSection values={values} />
+        <RegionalImpact regions={regions} />
+        <FeaturedProjects projects={projects} />
+        <Services services={services} />
+        <TechStack techStack={techStack} />
+        <Approach steps={approach} />
+        <Contact contact={contact} />
+        <Footer footer={footer} />
       </div>
-      <ValuesSection values={values} />
-      <RegionalImpact regions={regions} />
-      <FeaturedProjects projects={projects} />
-      <Services services={services} />
-      <TechStack techStack={techStack} />
-      <Approach steps={approach} />
-      <Contact contact={contact} />
-      <Footer footer={footer} />
-    </div>
+    </>
   );
 };
 
