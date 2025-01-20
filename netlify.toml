@@ -17,4 +17,4 @@
     X-XSS-Protection = "1; mode=block"
 
 [[plugins]]
-  package = "@netlify/plugins-gatsby"
+  package = "@netlify/plugin-gatsby"
