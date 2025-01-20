@@ -43,5 +43,8 @@ module.exports = {
         path: `${__dirname}/src/markdown`,
       },
     },
+    [
+      `gatsby-plugin-netlify`, 
+    ],
   ],
 };
