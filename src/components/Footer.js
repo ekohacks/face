@@ -23,7 +23,7 @@ const Footer = () => {
   const { description, locations, socialLinks } = data.markdownRemark.frontmatter;
 
   return (
-    <footer className="border-t border-gray-800">
+    <footer className="border-t border-gray-800 bg-black">
       <div className="container mx-auto px-6 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="text-gray-400">
@@ -31,7 +31,7 @@ const Footer = () => {
           </div>
           {locations.map((location, index) => (
             <div key={index}>
-              <h4 className="font-bold mb-4">{location.name}</h4>
+              <h4 className="font-bold mb-4 text-white">{location.name}</h4>
               <p className="text-gray-400 text-sm">{location.detail}</p>
             </div>
           ))}
