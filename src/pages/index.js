@@ -1,12 +1,12 @@
 import React from "react";
 import { graphql } from "gatsby";
 import ValuesSection from "../components/ValuesSection";
-import RegionalImpact from "../components/RegionalImpact";
+
 import FeaturedProjects from "../components/FeaturedProjects";
 import Services from "../components/Services";
 import TechStack from "../components/TechStack";
 import Approach from "../components/Approach";
-import Contact from "../components/Contact";
+
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
@@ -36,12 +36,14 @@ const Home = ({ data }) => {
           </p>
         </div>
         <ValuesSection values={values} />
+        <Approach steps={approach} />
         {/* <RegionalImpact regions={regions} /> */}
-        <FeaturedProjects projects={projects} />
+
         <Services services={services} />
         <TechStack techStack={techStack} />
-        <Approach steps={approach} />
-        <Contact contact={contact} />
+        <FeaturedProjects projects={projects} />
+        {/* <Contact contact={contact} /> */}
+        {/* <ContactForm /> */}
         <Footer footer={footer} />
       </div>
     </>

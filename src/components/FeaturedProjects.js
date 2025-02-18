@@ -72,6 +72,7 @@ import {
   Network,
   ShoppingBag,
   JapaneseYen,
+  ShoppingBasket,
 } from "lucide-react";
 
 const FeaturedProjects = () => {
@@ -95,7 +96,7 @@ const FeaturedProjects = () => {
       title: "Japan Nakama",
       description:
         "Discover your Japan. Explore Lifestyle, Food, Anime & More at Japan Nakama",
-      icon: Cpu,
+      icon: ShoppingBasket,
       keyFeatures: [
         { name: "Culture", icon: JapaneseYen },
         { name: "Shopping", icon: ShoppingBag },

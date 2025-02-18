@@ -28,14 +28,19 @@ const TechStack = () => {
         <h2 className="text-2xl font-bold mb-12">Our Tech Stack</h2>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           {technologies.map((tech, index) => (
-            <div key={index} className="bg-black bg-opacity-50 p-6 rounded-lg text-center">
-              <div className="text-green-400 font-mono text-2xl mb-2">{tech.icon}</div>
+            <div
+              key={index}
+              className="bg-black bg-opacity-50 p-6 rounded-lg text-center"
+            >
+              <div className="text-green-400 font-mono text-2xl mb-2">
+                {tech.icon}
+              </div>
               <h3 className="font-bold mb-2">{tech.name}</h3>
               <p className="text-gray-400 text-sm">{tech.description}</p>
             </div>
           ))}
         </div>
-        <div className="mt-16 grid md:grid-cols-3 gap-8">
+        {/* <div className="mt-16 grid md:grid-cols-3 gap-8">
           {approaches.map((approach, index) => (
             <div key={index} className="border-l-2 border-green-400 pl-4">
               <h3 className="font-bold mb-2">{approach.title}</h3>
@@ -46,7 +51,7 @@ const TechStack = () => {
               </ul>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

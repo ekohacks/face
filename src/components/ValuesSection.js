@@ -1,5 +1,6 @@
 import React from "react";
 import { Sparkles, Rocket, Focus, Zap, Code, Boxes, Heart } from "lucide-react";
+import Approach from "../components/Approach";
 // import SimplicitySectionCard from "./ValueCard";
 
 // const ValuesSection = ({ values }) => (

@@ -2,6 +2,8 @@
 title: "Footer"
 description: "EkoHacks Global - Connecting continents through technology"
 locations:
+  - name: "Talin"
+    detail: "Estonia"
   - name: "London"
     detail: "United Kingdom"
   - name: "Greece"
