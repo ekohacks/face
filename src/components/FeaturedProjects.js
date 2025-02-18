@@ -117,52 +117,52 @@ const FeaturedProjects = () => {
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <a
-              key={index}
-              href={project.link}
-              className="block transition-all duration-300 hover:transform hover:scale-105"
-            >
-              <div className="bg-gray-800 bg-opacity-50 p-8 rounded-lg border border-gray-700 hover:border-blue-400 transition-colors h-full">
-                <div className="flex items-center">
-                  <project.icon className="w-5 h-5 text-blue-300 mr-3" />
-                  <span className="text-blue-300 font-mono text-sm">
-                    {project.category}
-                  </span>
-                </div>
+            // <a
+            //   key={index}
+            //   href={project.link}
+            //   className="block transition-all duration-300 hover:transform hover:scale-105"
+            // >
+            <div className="bg-gray-800 bg-opacity-50 p-8 rounded-lg border border-gray-700 hover:border-blue-400 transition-colors h-full">
+              <div className="flex items-center">
+                <project.icon className="w-5 h-5 text-blue-300 mr-3" />
+                <span className="text-blue-300 font-mono text-sm">
+                  {project.category}
+                </span>
+              </div>
 
-                <h3 className="text-xl font-bold mt-4 text-white">
-                  {project.title}
-                </h3>
-                <p className="text-gray-300 mt-2">{project.description}</p>
+              <h3 className="text-xl font-bold mt-4 text-white">
+                {project.title}
+              </h3>
+              <p className="text-gray-300 mt-2">{project.description}</p>
 
-                <div className="mt-6 flex flex-wrap gap-3">
-                  {project.keyFeatures.map((feature, featIndex) => (
-                    <span
-                      key={featIndex}
-                      className="flex items-center text-xs bg-blue-400 bg-opacity-10 
+              <div className="mt-6 flex flex-wrap gap-3">
+                {project.keyFeatures.map((feature, featIndex) => (
+                  <span
+                    key={featIndex}
+                    className="flex items-center text-xs bg-blue-400 bg-opacity-10 
                         text-blue-300 px-3 py-1 rounded-full
                         border border-blue-400 border-opacity-20"
-                    >
-                      <feature.icon className="w-3 h-3 mr-1" />
-                      {feature.name}
-                    </span>
-                  ))}
-                </div>
+                  >
+                    <feature.icon className="w-3 h-3 mr-1" />
+                    {feature.name}
+                  </span>
+                ))}
+              </div>
 
-                <div className="mt-4 flex gap-2">
-                  {project.locations.map((location, locIndex) => (
-                    <span
-                      key={locIndex}
-                      className={`text-xs bg-${location.color}-400 bg-opacity-10 
+              <div className="mt-4 flex gap-2">
+                {project.locations.map((location, locIndex) => (
+                  <span
+                    key={locIndex}
+                    className={`text-xs bg-${location.color}-400 bg-opacity-10 
                         text-${location.color}-300 px-3 py-1 rounded-full
                         border border-${location.color}-400 border-opacity-20`}
-                    >
-                      {location.name}
-                    </span>
-                  ))}
-                </div>
+                  >
+                    {location.name}
+                  </span>
+                ))}
               </div>
-            </a>
+            </div>
+            // </a>
           ))}
         </div>
       </div>
