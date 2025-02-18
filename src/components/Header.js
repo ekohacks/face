@@ -22,12 +22,7 @@ const Header = () => {
                     >
                         Products
                     </Link>
-                    <Link
-                        to="/contact"
-                        className="text-gray-400 hover:text-green-400 transition-colors"
-                    >
-                        Contact
-                    </Link>
+                    
                 </nav>
             </div>
         </header>

@@ -27,13 +27,16 @@ const Home = ({ data }) => {
       <div className="min-h-screen bg-black text-white">
         <div className="container mx-auto px-6 py-32">
           <h1 className="text-6xl font-bold mb-6">EkoHacks</h1>
-          <p className="text-6xl font-bold text-green-400 mb-6">Global Tech, Local Impact</p>
+          <p className="text-6xl font-bold text-green-400 mb-6">
+            Global Tech, Local Impact
+          </p>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl">
-            Bridging Europe and Africa through innovative tech solutions. Operating in London, Greece, and Nigeria.
+            Enterprise technology solutions across continents <br />
+            Consulting • Development • Integration
           </p>
         </div>
         <ValuesSection values={values} />
-        <RegionalImpact regions={regions} />
+        {/* <RegionalImpact regions={regions} /> */}
         <FeaturedProjects projects={projects} />
         <Services services={services} />
         <TechStack techStack={techStack} />
@@ -65,7 +68,7 @@ export const query = graphql`
         }
       }
     }
-}
+  }
 `;
 
 export default Home;
