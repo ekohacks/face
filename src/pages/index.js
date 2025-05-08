@@ -1,12 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
 import ValuesSection from "../components/ValuesSection";
-
 import FeaturedProjects from "../components/FeaturedProjects";
 import Services from "../components/Services";
 import TechStack from "../components/TechStack";
 import Approach from "../components/Approach";
-
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
@@ -24,28 +22,27 @@ const Home = ({ data }) => {
   return (
     <>
       <Header header={header} />
-      <div className="min-h-screen bg-black text-white">
-        <div className="container mx-auto px-6 py-32">
-          <h1 className="text-6xl font-bold mb-6">EkoHacks</h1>
-          <p className="text-6xl font-bold text-green-400 mb-6">
+      <main className="min-h-screen bg-white text-black dark:bg-black dark:text-white transition-colors duration-300">
+        <section className="container mx-auto px-6 py-32">
+          <h1 className="text-6xl font-bold mb-6 text-green-600 dark:text-green-400 transition-colors">
+            EkoHacks
+          </h1>
+          <p className="text-6xl font-bold text-green-500 dark:text-green-300 mb-6 transition-colors">
             Global Tech, Local Impact
           </p>
-          <p className="text-xl text-gray-400 mb-8 max-w-2xl">
+          <p className="text-xl text-gray-700 dark:text-gray-400 mb-8 max-w-2xl transition-colors">
             Enterprise technology solutions across continents <br />
             Consulting • Development • Integration
           </p>
-        </div>
+        </section>
+
         <ValuesSection values={values} />
         <Approach steps={approach} />
-        {/* <RegionalImpact regions={regions} /> */}
-
         <Services services={services} />
         <TechStack techStack={techStack} />
         <FeaturedProjects projects={projects} />
-        {/* <Contact contact={contact} /> */}
-        {/* <ContactForm /> */}
         <Footer footer={footer} />
-      </div>
+      </main>
     </>
   );
 };

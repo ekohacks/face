@@ -10,3 +10,13 @@
 exports.onRenderBody = ({ setHtmlAttributes }) => {
   setHtmlAttributes({ lang: `en` })
 }
+
+
+// gatsby-ssr.js & gatsby-browser.js
+// gatsby-browser.js / gatsby-ssr.js
+import React from 'react';
+import { ThemeProvider } from './src/context/ThemeContext';
+
+export const wrapRootElement = ({ element }) => (
+  <ThemeProvider>{element}</ThemeProvider>
+);
