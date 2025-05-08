@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* global.css */
+/* Add this to your CSS variables */
+/* Global styles */
+body {
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Dark mode */
+  body.dark {
+    background-color: #000000;
+    color: white;
+  }
+  
+  /* Light mode */
+  body.light {
+    background-color: #ffffff;
+    color: black;
+  }
+  
