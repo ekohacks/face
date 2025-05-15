@@ -65,8 +65,6 @@
 import React from "react";
 import {
   Pill,
-  Cpu,
-  Clock,
   Bell,
   Shield,
   Network,
@@ -117,12 +115,8 @@ const FeaturedProjects = () => {
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            // <a
-            //   key={index}
-            //   href={project.link}
-            //   className="block transition-all duration-300 hover:transform hover:scale-105"
-            // >
-            <div className="bg-gray-800 bg-opacity-50 p-8 rounded-lg border border-gray-700 hover:border-blue-400 transition-colors h-full">
+
+            <div  key={index} className="bg-gray-800 bg-opacity-50 p-8 rounded-lg border border-gray-700 hover:border-blue-400 transition-colors h-full">
               <div className="flex items-center">
                 <project.icon className="w-5 h-5 text-blue-300 mr-3" />
                 <span className="text-blue-300 font-mono text-sm">

@@ -20,7 +20,7 @@ const Footer = () => {
     }
   `);
 
-  const { description, locations, socialLinks } =
+  const { description, locations,  } =
     data.markdownRemark.frontmatter;
 
   return (
@@ -37,15 +37,7 @@ const Footer = () => {
             </div>
           ))}
         </div>
-        {/* <div className="flex justify-end mt-8">
-          <div className="flex space-x-6">
-            {socialLinks.map((link, index) => (
-              <a key={index} href={link.url} className="text-gray-400 hover:text-white">
-                {link.name}
-              </a>
-            ))}
-          </div>
-        </div> */}
+
       </div>
     </footer>
   );

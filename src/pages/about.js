@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { 
-  Globe, 
   Users, 
   Sparkles, 
   ArrowRight,
   Building2,
-  Clock,
-  Target,
+   Target,
   Zap
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import PropTypes from 'prop-types';
 
 const AboutPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
@@ -107,7 +106,7 @@ const AboutPage = ({ data }) => {
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold mb-16">Global Presence</h2>
             <div className="grid md:grid-cols-3 gap-8">
-              {frontmatter.globalPresence.map((location, index) => (
+              {frontmatter.globalPresence.map((location, ) => (
                 <div key={location.location} className="group relative overflow-hidden rounded-lg">
                   <div className="absolute inset-0 bg-[url('/api/placeholder/600/400')] bg-cover bg-center"></div>
                   <div className="absolute inset-0 bg-black opacity-50 group-hover:opacity-70 transition-opacity"></div>
@@ -129,7 +128,7 @@ const AboutPage = ({ data }) => {
         <div className="container mx-auto px-6 py-24">
           <h2 className="text-3xl font-bold mb-16">Our Values</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {frontmatter.values.map((value, index) => (
+            {frontmatter.values.map((value, ) => (
               <div key={value.title} className="group">
                 <div className="bg-gray-900 p-8 rounded-lg transform group-hover:-translate-y-2 transition-transform">
                   <div className="text-green-400 mb-4">
@@ -206,5 +205,50 @@ export const query = graphql`
     }
   }
 `;
+AboutPage.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        subtitle: PropTypes.string.isRequired,
+        vision: PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          description: PropTypes.string.isRequired,
+        }).isRequired,
+        mission: PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          description: PropTypes.string.isRequired,
+        }).isRequired,
+        milestones: PropTypes.arrayOf(
+          PropTypes.shape({
+            year: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired,
+            description: PropTypes.string.isRequired,
+          })
+        ).isRequired,
+        globalPresence: PropTypes.arrayOf(
+          PropTypes.shape({
+            location: PropTypes.string.isRequired,
+            role: PropTypes.string.isRequired,
+            description: PropTypes.string.isRequired,
+            icon: PropTypes.string.isRequired,
+          })
+        ).isRequired,
+        values: PropTypes.arrayOf(
+          PropTypes.shape({
+            icon: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired,
+            description: PropTypes.string.isRequired,
+          })
+        ).isRequired,
+        cta: PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          subtitle: PropTypes.string.isRequired,
+          buttonText: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default AboutPage;
