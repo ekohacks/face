@@ -20,7 +20,7 @@ const TechStack = () => {
     }
   `);
 
-  const { technologies, approaches } = data.markdownRemark.frontmatter;
+  const { technologies,  } = data.markdownRemark.frontmatter;
 
   return (
     <div className="bg-gray-900 py-24">
