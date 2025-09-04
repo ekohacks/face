@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { 
-  Globe, 
   Users, 
   Sparkles, 
   ArrowRight,
   Building2,
-  Clock,
   Target,
   Zap
 } from 'lucide-react';
@@ -16,7 +14,7 @@ import Footer from '../components/Footer';
 const AboutPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
   const [activeTab, setActiveTab] = useState('vision');
-
+  
   return (
     <>
       <Header />
@@ -100,9 +98,11 @@ const AboutPage = ({ data }) => {
               ))}
             </div>
           </div>
+
         </div>
 
-        {/* Global Presence */}
+
+        {/* Global Presence*/}
         <div className="bg-gray-900 py-24">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold mb-16">Global Presence</h2>
