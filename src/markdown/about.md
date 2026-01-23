@@ -15,7 +15,7 @@ mission:
     that drive real business value.
 milestones:
   - year: "2019"
-    title: "Founded in London"
+    title: "Founded in the UK"
     description: "Started with a vision to bridge technological gaps between continents"
   - year: "2020"
     title: "Greek Expansion"
