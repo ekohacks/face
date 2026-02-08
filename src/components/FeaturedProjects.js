@@ -110,38 +110,39 @@ const FeaturedProjects = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-gray-800 to-gray-900 py-24">
+    <div className="bg-white dark:bg-gray-900 py-24 text-gray-900 dark:text-gray-100">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-12 text-white">
+        <h2 className="text-3xl font-bold mb-12 text-gray-900 dark:text-white">
           Featured Projects
         </h2>
+
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            // <a
-            //   key={index}
-            //   href={project.link}
-            //   className="block transition-all duration-300 hover:transform hover:scale-105"
-            // >
-            <div className="bg-gray-800 bg-opacity-50 p-8 rounded-lg border border-gray-700 hover:border-blue-400 transition-colors h-full">
+            <div
+              key={index}
+              className="bg-gray-100 border border-gray-200 dark:bg-black/50 dark:border-gray-800
+                         p-8 rounded-lg hover:border-blue-400 transition-colors h-full"
+            >
               <div className="flex items-center">
-                <project.icon className="w-5 h-5 text-blue-300 mr-3" />
-                <span className="text-blue-300 font-mono text-sm">
+                <project.icon className="w-5 h-5 text-blue-500 dark:text-blue-300 mr-3" />
+                <span className="text-blue-500 dark:text-blue-300 font-mono text-sm">
                   {project.category}
                 </span>
               </div>
 
-              <h3 className="text-xl font-bold mt-4 text-white">
+              <h3 className="text-xl font-bold mt-4 text-gray-900 dark:text-white">
                 {project.title}
               </h3>
-              <p className="text-gray-300 mt-2">{project.description}</p>
+              <p className="text-gray-600 dark:text-gray-300 mt-2">
+                {project.description}
+              </p>
 
               <div className="mt-6 flex flex-wrap gap-3">
                 {project.keyFeatures.map((feature, featIndex) => (
                   <span
                     key={featIndex}
-                    className="flex items-center text-xs bg-blue-400 bg-opacity-10 
-                        text-blue-300 px-3 py-1 rounded-full
-                        border border-blue-400 border-opacity-20"
+                    className="flex items-center text-xs bg-blue-400/10 text-blue-500 dark:text-blue-300 
+                               px-3 py-1 rounded-full border border-blue-400/20"
                   >
                     <feature.icon className="w-3 h-3 mr-1" />
                     {feature.name}
@@ -153,16 +154,15 @@ const FeaturedProjects = () => {
                 {project.locations.map((location, locIndex) => (
                   <span
                     key={locIndex}
-                    className={`text-xs bg-${location.color}-400 bg-opacity-10 
-                        text-${location.color}-300 px-3 py-1 rounded-full
-                        border border-${location.color}-400 border-opacity-20`}
+                    className={`text-xs bg-${location.color}-400/10 
+                                text-${location.color}-500 dark:text-${location.color}-300 
+                                px-3 py-1 rounded-full border border-${location.color}-400/20`}
                   >
                     {location.name}
                   </span>
                 ))}
               </div>
             </div>
-            // </a>
           ))}
         </div>
       </div>
