@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const RegionalImpact = ({ regions }) => (
   <div className="bg-gradient-to-b from-gray-900 to-black py-24">
@@ -23,5 +24,14 @@ const RegionalImpact = ({ regions }) => (
     </div>
   </div>
 );
+RegionalImpact.propTypes = {
+  regions: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      features: PropTypes.arrayOf(PropTypes.string).isRequired,
+    })
+  ).isRequired,
+};
 
 export default RegionalImpact;

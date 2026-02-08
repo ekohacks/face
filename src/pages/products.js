@@ -4,6 +4,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import PropTypes from 'prop-types';
 
 const ProductPage = ({ data, location }) => {
   const { products } = data.markdownRemark.frontmatter;
@@ -50,12 +51,12 @@ const ProductPage = ({ data, location }) => {
                     </div>
 
                     <div className="flex gap-2">
-                      {product.locations.map((location, index) => (
+                    {product.locations.map((loc, index) => (
                         <span
                           key={index}
-                          className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-${location.color}-900 text-${location.color}-300`}
+                          className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-${loc.color}-900 text-${loc.color}-300`}
                         >
-                          {location.name}
+                          {loc.name}
                         </span>
                       ))}
                     </div>
@@ -128,5 +129,47 @@ export const query = graphql`
     }
   }
 `;
+
+ProductPage.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        products: PropTypes.shape({
+          fintech: PropTypes.shape({
+            category: PropTypes.string,
+            title: PropTypes.string,
+            description: PropTypes.string,
+            locations: PropTypes.arrayOf(
+              PropTypes.shape({
+                name: PropTypes.string.isRequired,
+                color: PropTypes.string.isRequired,
+              })
+            ),
+            features: PropTypes.arrayOf(PropTypes.string),
+            benefits: PropTypes.arrayOf(PropTypes.string),
+          }),
+          tourism: PropTypes.shape({
+            category: PropTypes.string,
+            title: PropTypes.string,
+            description: PropTypes.string,
+            locations: PropTypes.arrayOf(
+              PropTypes.shape({
+                name: PropTypes.string.isRequired,
+                color: PropTypes.string.isRequired,
+              })
+            ),
+            features: PropTypes.arrayOf(PropTypes.string),
+            benefits: PropTypes.arrayOf(PropTypes.string),
+          }),
+        }).isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+
+  location: PropTypes.shape({
+    hash: PropTypes.string,
+  }).isRequired,
+};
+
 
 export default ProductPage;

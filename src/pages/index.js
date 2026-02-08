@@ -9,15 +9,14 @@ import Approach from "../components/Approach";
 
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import PropTypes from "prop-types";
 
 const Home = ({ data }) => {
   const values = data?.values?.frontmatter?.values || [];
-  const regions = data?.regions?.frontmatter?.regions || [];
   const projects = data?.projects?.frontmatter?.projects || [];
   const services = data?.services?.frontmatter?.services || [];
   const techStack = data?.techStack?.frontmatter?.technologies || [];
   const approach = data?.approach?.frontmatter?.steps || [];
-  const contact = data?.contact?.frontmatter?.contact || {};
   const footer = data?.footer?.frontmatter?.footer || {};
   const header = data?.header?.frontmatter?.header || {};
 
@@ -72,5 +71,50 @@ export const query = graphql`
     }
   }
 `;
+Home.propTypes = {
+  data: PropTypes.shape({
+    values: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        values: PropTypes.arrayOf(
+          PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            description: PropTypes.string.isRequired,
+            points: PropTypes.arrayOf(PropTypes.string).isRequired,
+          })
+        ).isRequired,
+      }).isRequired,
+    }),
+    projects: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        projects: PropTypes.array.isRequired,
+      }).isRequired,
+    }),
+    services: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        services: PropTypes.array.isRequired,
+      }).isRequired,
+    }),
+    techStack: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        technologies: PropTypes.array.isRequired,
+      }).isRequired,
+    }),
+    approach: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        steps: PropTypes.array.isRequired,
+      }).isRequired,
+    }),
+    footer: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        footer: PropTypes.object.isRequired,
+      }).isRequired,
+    }),
+    header: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        header: PropTypes.object.isRequired,
+      }).isRequired,
+    }),
+  }).isRequired,
+};
 
 export default Home;
